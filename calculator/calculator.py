@@ -3,6 +3,8 @@
 from calc.addition import Addition
 from calc.subtraction import Subtraction
 from calc.multiplication import Multiplication
+from calc.division import Division
+
 class Calculator:
     """ This is the Calculator class"""
     #this is the calculator static property
@@ -18,6 +20,9 @@ class Calculator:
     def history_count():
         return len(Calculator.history)
     @staticmethod
+    def get_history():
+        return Calculator.history
+    @staticmethod
     def add_calculation_to_history(calculation):
         Calculator.history.append(calculation)
         return True
@@ -25,6 +30,10 @@ class Calculator:
     def get_result_of_last_calculation_added_to_history():
         # -1 gets the last item added to the list automaticly and you can expect it to have the get result method
         return Calculator.history[-1].getResult()
+    @staticmethod
+    def get_last_calculation_object():
+        # -1 gets the last item added to the list automaticly and you can expect it to have the get result method
+        return Calculator.history[-1]
     @staticmethod
     def add_number(value_a, value_b):
         """ adds number to result"""
@@ -49,3 +58,9 @@ class Calculator:
         Calculator.add_calculation_to_history(Multiplication.create(value_a,value_b))
         return Calculator.get_result_of_last_calculation_added_to_history()
 
+    @staticmethod
+    def divide_numbers(value_a, value_b):
+        """ divide two numbers and store the result"""
+        #this is a shorthand way to create the division object and added it the history in one line
+        Calculator.add_calculation_to_history(Division.create(value_a,value_b))
+        return Calculator.get_result_of_last_calculation_added_to_history()
