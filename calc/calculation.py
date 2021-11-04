@@ -9,3 +9,8 @@ class Calculation:
     def create(cls, value_a, value_b):
         """idk"""
         return cls(value_a,value_b)
+
+    @property
+    def value_a(self):
+        '''qwpifh'''
+        return self.value_a
