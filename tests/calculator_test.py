@@ -15,6 +15,7 @@ def test_add_calculation_to_history(clear_history):
     '''test for add calc to list'''
     Calculator.add_calculation_to_history(Addition.create(3,2))
     assert Calculator.get_result_of_last_calculation_added_to_history() == 5
+    clear_history
 
 def test_get_last_calculation(clear_history):
     '''test to get last calc'''
