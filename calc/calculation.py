@@ -12,4 +12,4 @@ class Calculation:
 
     def display(self):
         '''dumb pytest'''
-        print(self.value_a)
+        return self.value_a

@@ -11,6 +11,10 @@ def fixture_clear_history():
     '''clear history function'''
     Calculator.clear_history()
 
+def test_display():
+    temp = Addition.create(3,2)
+    assert temp.display() == 3
+
 def test_add_calculation_to_history():
     '''test for add calc to list'''
     Calculator.add_calculation_to_history(Addition.create(3,2))
