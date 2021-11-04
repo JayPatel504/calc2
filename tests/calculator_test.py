@@ -94,3 +94,7 @@ def test_calculator_multiply(clear_history):
 def test_calculator_divide(clear_history):
     """ tests division of two numbers"""
     assert Calculator.divide_numbers(2,2) == 1
+
+def test_calculator_divide(clear_history):
+    """ tests division of two numbers"""
+    assert Calculator.divide_numbers(2,0) == "Can't divide by zero"
