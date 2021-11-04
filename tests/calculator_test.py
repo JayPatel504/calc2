@@ -12,6 +12,7 @@ def fixture_clear_history():
     Calculator.clear_history()
 
 def test_display():
+    '''omg'''
     temp = Addition.create(3,2)
     assert temp.display() == 3
 
