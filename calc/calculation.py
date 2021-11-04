@@ -10,7 +10,6 @@ class Calculation:
         """idk"""
         return cls(value_a,value_b)
 
-    @property
-    def value_a(self):
-        '''qwpifh'''
-        return self.value_a
+    def display(self):
+        '''dumb pytest'''
+        print(self.value_a)
