@@ -35,5 +35,5 @@ def test_calculator_divide():
     """ tests division of two numbers"""
     calc = Calculator()
     result  = calc.divide_numbers(2,2)
-    assert result == 2
+    assert result == 1
     assert calc.divide_numbers(2,0) == "Can't divide by zero"
