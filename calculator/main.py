@@ -22,7 +22,7 @@ class Calculator:
     def divide_numbers(self, value_a, value_b):
         """ divide two numbers and store the result"""
         try:
-            self.result = value_a * value_b
+            self.result = value_a / value_b
         except ZeroDivisionError:
             self.result = "Can't divide by zero"
         return self.result
