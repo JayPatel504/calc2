@@ -17,6 +17,12 @@ class Calculator:
         Calculator.history.clear()
         return True
     @staticmethod
+    def get_last_calculation():
+        return Calculator.history[-1]
+    @staticmethod
+    def get_first_calculation():
+        return Calculator.history[0]
+    @staticmethod
     def history_count():
         return len(Calculator.history)
     @staticmethod

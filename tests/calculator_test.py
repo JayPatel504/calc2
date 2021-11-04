@@ -4,13 +4,35 @@ import pprint
 import pytest
 
 from calculator.calculator import Calculator
-
+from calc.addition import Addition
 #this is how you define a function that will run each time you pass it to a test, it is called a fixture
 @pytest.fixture
 def clear_history():
     Calculator.clear_history()
 
-def test_calculator_add(clear_history):
+def test_add_calculation_to_history(clear_history):
+    Calculator.add_calculation_to_history(Addition.create(3,2))
+    assert Calculator.get_result_of_last_calculation_added_to_history() == 5
+
+def test_get_last_calculation(clear_history):
+    Calculator.add_number(1,2)
+    Calculator.add_number(2, 2)
+    Calculator.add_number(3, 2)
+    assert Calculator.get_last_calculation().getResult() == 5
+
+def test_get_last_calculation_object(clear_history):
+    Calculator.add_number(1,2)
+    Calculator.add_number(2, 2)
+    Calculator.add_number(3, 2)
+    assert Calculator.get_last_calculation_object().getResult() == 5
+
+def test_get_first_calculation(clear_history):
+    Calculator.add_number(1,2)
+    Calculator.add_number(2, 2)
+    Calculator.add_number(3, 2)
+    assert Calculator.get_first_calculation().getResult() == 3
+
+def test_add_number(clear_history):
     """Testing the Add function of the calculator"""
     assert Calculator.add_number(1,2) == 3
     assert Calculator.add_number(2, 2) == 4
@@ -29,18 +51,24 @@ def test_clear_history(clear_history):
     assert Calculator.clear_history() == True
     assert Calculator.history_count() == 0
 
-def test_count_history(clear_history):
+def test_history_count(clear_history):
     assert Calculator.history_count() == 0
     assert Calculator.add_number(2, 2) == 4
     assert Calculator.add_number(3, 2) == 5
     assert Calculator.history_count() == 2
 
-def test_get_last_calculation_result(clear_history):
+def test_get_history():
+    assert Calculator.add_number(2, 2) == 4
+    assert Calculator.add_number(3, 2) == 5
+    assert Calculator.add_number(6, 2) == 8
+    assert Calculator.get_history() == Calculator.history
+
+def test_get_result_of_last_calculation_added_to_history(clear_history):
     assert Calculator.add_number(2, 2) == 4
     assert Calculator.add_number(3, 2) == 5
     assert Calculator.get_result_of_last_calculation_added_to_history() == 5
 
-def test_get_first_calculation_result(clear_history):
+def test_get_result_of_first_calculation_added_to_history(clear_history):
     assert Calculator.add_number(2, 2) == 4
     assert Calculator.add_number(3, 2) == 5
     assert Calculator.get_result_of_first_calculation_added_to_history() == 4
@@ -52,3 +80,7 @@ def test_calculator_subtract(clear_history):
 def test_calculator_multiply(clear_history):
     """ tests multiplication of two numbers"""
     assert Calculator.multiply_numbers(1,2) == 2
+
+def test_calculator_divide(clear_history):
+    """ tests division of two numbers"""
+    assert Calculator.divide_numbers(2,2) == 1
