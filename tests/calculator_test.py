@@ -6,7 +6,7 @@ import pytest
 from calculator.calculator import Calculator
 from calc.addition import Addition
 
-@pytest.fixture(name="clear_history")
+@pytest.fixture(name="clear_history",autouse=True)
 def fixture_clear_history():
     '''clear history function'''
     Calculator.clear_history()
@@ -15,7 +15,6 @@ def test_add_calculation_to_history(clear_history):
     '''test for add calc to list'''
     Calculator.add_calculation_to_history(Addition.create(3,2))
     assert Calculator.get_result_of_last_calculation_added_to_history() == 5
-    clear_history
 
 def test_get_last_calculation(clear_history):
     '''test to get last calc'''
@@ -23,7 +22,6 @@ def test_get_last_calculation(clear_history):
     Calculator.add_number(2, 2)
     Calculator.add_number(3, 2)
     assert Calculator.get_last_calculation().get_result() == 5
-    clear_history
 
 def test_get_last_calculation_object(clear_history):
     '''test to get last object'''
@@ -31,7 +29,6 @@ def test_get_last_calculation_object(clear_history):
     Calculator.add_number(2, 2)
     Calculator.add_number(3, 2)
     assert Calculator.get_last_calculation_object().get_result() == 5
-    clear_history
 
 def test_get_first_calculation(clear_history):
     '''test to get first calc'''
@@ -39,7 +36,6 @@ def test_get_first_calculation(clear_history):
     Calculator.add_number(2, 2)
     Calculator.add_number(3, 2)
     assert Calculator.get_first_calculation().get_result() == 3
-    clear_history
 
 def test_add_number(clear_history):
     """Testing the Add function of the calculator"""
@@ -50,7 +46,6 @@ def test_add_number(clear_history):
     assert Calculator.history_count() == 4
     assert Calculator.get_result_of_last_calculation_added_to_history() == 6
     pprint.pprint(Calculator.history)
-    clear_history
 
 def test_clear_history(clear_history):
     '''test to clear history'''
@@ -61,7 +56,6 @@ def test_clear_history(clear_history):
     assert Calculator.history_count() == 4
     assert Calculator.clear_history() #== True
     assert Calculator.history_count() == 0
-    clear_history
 
 def test_history_count(clear_history):
     '''test to count history'''
@@ -69,7 +63,6 @@ def test_history_count(clear_history):
     assert Calculator.add_number(2, 2) == 4
     assert Calculator.add_number(3, 2) == 5
     assert Calculator.history_count() == 2
-    clear_history
 
 def test_get_history(clear_history):
     '''test to get history'''
@@ -77,34 +70,28 @@ def test_get_history(clear_history):
     assert Calculator.add_number(3, 2) == 5
     assert Calculator.add_number(6, 2) == 8
     assert Calculator.get_history() == Calculator.history
-    clear_history
 
 def test_get_result_of_last_calculation_added_to_history(clear_history):
     '''test to get result of last calc'''
     assert Calculator.add_number(2, 2) == 4
     assert Calculator.add_number(3, 2) == 5
     assert Calculator.get_result_of_last_calculation_added_to_history() == 5
-    clear_history
 
 def test_get_result_of_first_calculation_added_to_history(clear_history):
     '''test to get result of first calc'''
     assert Calculator.add_number(2, 2) == 4
     assert Calculator.add_number(3, 2) == 5
     assert Calculator.get_result_of_first_calculation_added_to_history() == 4
-    clear_history
 
 def test_calculator_subtract(clear_history):
     """Testing the subtract method of the calculator"""
     assert Calculator.subtract_number(1, 2) == -1
-    clear_history
 
 def test_calculator_multiply(clear_history):
     """ tests multiplication of two numbers"""
     assert Calculator.multiply_numbers(1,2) == 2
-    clear_history
 
 def test_calculator_divide(clear_history):
     """ tests division of two numbers"""
     assert Calculator.divide_numbers(2,2) == 1
     assert Calculator.divide_numbers(2,0) == "Can't divide by zero"
-    clear_history
