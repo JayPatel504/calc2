@@ -11,15 +11,11 @@ def fixture_clear_history():
     '''clear history function'''
     Calculator.clear_history()
 
-def test_display():
-    '''omg'''
-    temp = Addition.create(3,2)
-    assert temp.display() == 3
-
 def test_add_calculation_to_history():
     '''test for add calc to list'''
-    Calculator.add_calculation_to_history(Addition.create(3,2))
-    assert Calculator.get_result_of_last_calculation_added_to_history() == 5
+    f_f = Addition((3,2,4,5,6,7,2))
+    Calculator.add_calculation_to_history(f_f)
+    assert Calculator.get_result_of_last_calculation_added_to_history() == 29.0
 
 def test_get_last_calculation():
     '''test to get last calc'''
@@ -90,7 +86,7 @@ def test_get_result_of_first_calculation_added_to_history():
 
 def test_calculator_subtract():
     """Testing the subtract method of the calculator"""
-    assert Calculator.subtract_number(1, 2) == -1
+    assert Calculator.subtract_number(1, 2) == -3.0
 
 def test_calculator_multiply():
     """ tests multiplication of two numbers"""

@@ -6,10 +6,12 @@ class Division(Calculation):
     """something"""
     def get_result(self):
         """idk"""
-        dv_of_values = 0.0
+        dv_of_values = self.values[0]
         try:
-            for v in self.value:
-                dv_of_values/=v
+            for i, v_suck in enumerate(self.values):
+                if i==0:
+                    continue
+                dv_of_values/=v_suck
             return dv_of_values
         except ZeroDivisionError:
             return "Can't divide by zero"
