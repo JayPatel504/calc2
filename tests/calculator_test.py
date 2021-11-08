@@ -28,12 +28,12 @@ def test_get_last_calculation():
     Calculator.add_number(3, 2)
     assert Calculator.get_last_calculation().get_result() == 5
 
-def test_get_last_calculation_object():
+def test_get_calculation_object():
     '''test to get last object'''
     Calculator.add_number(1,2)
     Calculator.add_number(2, 2)
     Calculator.add_number(3, 2)
-    assert Calculator.get_last_calculation_object().get_result() == 5
+    assert Calculator.get_calculation_object(2).get_result() == 5
 
 def test_get_first_calculation():
     '''test to get first calc'''

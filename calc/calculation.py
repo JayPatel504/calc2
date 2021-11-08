@@ -1,15 +1,14 @@
 """This is our calculation base class / Abstract Class"""
 class Calculation:
-    '''idk'''
-    def __init__(self,value_a, value_b):
-        self.value_a = value_a
-        self.value_b = value_b
-
-    @classmethod
-    def create(cls, value_a, value_b):
-        """idk"""
-        return cls(value_a,value_b)
-
-    def display(self):
-        '''dumb pytest'''
-        return self.value_a
+    """ calculation abstract base class"""
+    # pylint: disable=too-few-public-methods
+    def __init__(self,values: tuple):
+        """ constructor method"""
+        self.values = Calculation.convert_args_to_list_float(values)
+    @staticmethod
+    def convert_args_to_list_float(values):
+        """ standardize values to list of floats"""
+        list_values_float = []
+        for item in values:
+            list_values_float.append(float(item))
+        return list_values_float

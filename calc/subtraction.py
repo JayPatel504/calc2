@@ -2,7 +2,10 @@
 from calc.calculation import Calculation
 
 class Subtraction(Calculation):
-    """sub"""
+    """subtraction calculation object"""
     def get_result(self):
-        """idk"""
-        return self.value_a - self.value_b
+        """get the subtraction results"""
+        difference_of_values = 0.0
+        for value in self.values:
+            difference_of_values = difference_of_values - value
+        return difference_of_values

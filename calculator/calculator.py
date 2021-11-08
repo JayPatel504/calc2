@@ -43,29 +43,29 @@ class Calculator:
         '''get last result'''
         return Calculator.history[-1].get_result()
     @staticmethod
-    def get_last_calculation_object():
-        '''get last object'''
-        return Calculator.history[-1]
+    def get_calculation_object(num):
+        '''get specified object'''
+        return Calculator.history[num]
     @staticmethod
-    def add_number(value_a, value_b):
+    def add_number(*args):
         """ adds number to result"""
-        addition = Addition.create(value_a,value_b)
+        addition = Addition(args)
         Calculator.add_calculation_to_history(addition)
         return Calculator.get_result_of_last_calculation_added_to_history()
     @staticmethod
-    def subtract_number(value_a, value_b):
+    def subtract_number(*args):
         """ subtract number from result"""
-        subtraction = Subtraction.create(value_a, value_b)
+        subtraction = Subtraction(args)
         Calculator.add_calculation_to_history(subtraction)
         return Calculator.get_result_of_last_calculation_added_to_history()
     @staticmethod
-    def multiply_numbers(value_a, value_b):
+    def multiply_numbers(*args):
         """ multiply two numbers and store the result"""
-        Calculator.add_calculation_to_history(Multiplication.create(value_a,value_b))
+        Calculator.add_calculation_to_history(Multiplication(args))
         return Calculator.get_result_of_last_calculation_added_to_history()
 
     @staticmethod
-    def divide_numbers(value_a, value_b):
+    def divide_numbers(*args):
         """ divide two numbers and store the result"""
-        Calculator.add_calculation_to_history(Division.create(value_a,value_b))
+        Calculator.add_calculation_to_history(Division(args))
         return Calculator.get_result_of_last_calculation_added_to_history()

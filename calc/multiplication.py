@@ -2,7 +2,10 @@
 from calc.calculation import Calculation
 
 class Multiplication(Calculation):
-    """idk"""
+    """subtraction calculation object"""
     def get_result(self):
-        '''idk'''
-        return self.value_a * self.value_b
+        """get the multiplication results"""
+        result = 1.0
+        for value in self.values:
+            result = result * value
+        return result
