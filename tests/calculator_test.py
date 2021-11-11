@@ -25,7 +25,7 @@ def test_get_last_calculation():
     assert Calculator.get_last_calculation().get_result() == 5
 
 def test_get_calculation_object():
-    '''test to get last object'''
+    '''test to get object'''
     Calculator.add_number(1,2)
     Calculator.add_number(2, 2)
     Calculator.add_number(3, 2)

@@ -3,9 +3,9 @@
 from calc.calculation import Calculation
 
 class Division(Calculation):
-    """something"""
+    """divide class"""
     def get_result(self):
-        """idk"""
+        """get division result"""
         dv_of_values = self.values[0]
         try:
             for i, v_suck in enumerate(self.values):
