@@ -43,7 +43,7 @@ class Calculator:
         '''get specified object'''
         return Calculator.history[num]
     @staticmethod
-    def add_number(tuple_values: tuple):
+    def add_numbers(tuple_values: tuple):
         """ add numbers to result"""
         Calculator.add_calculation(Addition.create(tuple_values))
         return True

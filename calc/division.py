@@ -12,6 +12,6 @@ class Division(Calculation):
                 if i==0:
                     continue
                 dv_of_values/=val
-            return dv_of_values
+            return round(dv_of_values,2)
         except ZeroDivisionError:
             return "Can't divide by zero"

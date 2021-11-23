@@ -11,5 +11,5 @@ class Calculation:
         return cls(values)
     @staticmethod
     def convert_args_to_list_float(values):
-        """ standardize values to list of floats"""
-        return tuple(map(float,values)) #[float(item) for item in values]
+        """function to standardize values to list of floats"""
+        return tuple(map(float,values)) 
