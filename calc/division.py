@@ -1,11 +1,11 @@
-"""Division"""
+"""Division Class"""
 
 from calc.calculation import Calculation
 
 class Division(Calculation):
-    """something"""
+    """division calculation object"""
     def get_result(self):
-        """idk"""
+        """get the division results"""
         dv_of_values = self.values[0]
         try:
             for i, v_suck in enumerate(self.values):
