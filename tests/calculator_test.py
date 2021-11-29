@@ -45,22 +45,22 @@ def test_get_calculation_object():
 
 def test_add_number():
     """Testing the Add function of the calculator"""
-    Calculator.add_number((1,2,3,4))
-    assert Calculator.get_result_of_last_calculation_added_to_history() == 10.0
+    Calculator.add_number((1,2,3,4)) #arrange & act 
+    assert Calculator.get_result_of_last_calculation_added_to_history() == 10.0 #assert
 
 def test_subtract_numbers():
     """Testing the subtract method of the calculator"""
-    Calculator.subtract_numbers((10,7))
-    assert Calculator.get_result_of_last_calculation_added_to_history() == -17.0
+    Calculator.subtract_numbers((10,7)) #arrange & act 
+    assert Calculator.get_result_of_last_calculation_added_to_history() == -17.0 #assert
 
 def test_multiply_numbers():
     """ tests multiplication of two numbers"""
-    Calculator.multiply_numbers((2,2,2))
-    assert Calculator.get_result_of_last_calculation_added_to_history() == 8.0
+    Calculator.multiply_numbers((2,2,2)) #arrange & act 
+    assert Calculator.get_result_of_last_calculation_added_to_history() == 8.0 #assert
 
 def test_divide_numbers():
     """ tests division of two numbers"""
-    Calculator.divide_numbers((2,2))
-    assert Calculator.get_result_of_last_calculation_added_to_history() == 1.0
-    Calculator.divide_numbers((2,0))
-    assert Calculator.get_result_of_last_calculation_added_to_history() == "Can't divide by zero"
+    Calculator.divide_numbers((2,2)) #arrange & act 
+    assert Calculator.get_result_of_last_calculation_added_to_history() == 1.0 #assert
+    Calculator.divide_numbers((2,0)) #arrange & act 
+    assert Calculator.get_result_of_last_calculation_added_to_history() == "Can't divide by zero" #assert
