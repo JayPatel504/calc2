@@ -13,7 +13,7 @@ def test_add_number():
     """Testing the Add function of the calculator"""
     df = pd.read_csv('./files/addition1.csv').to_numpy()
     for i in range(1,len(df)):
-        Calculator.add_number(tuple(df[i][:-1]))
+        Calculator.add_numbers(tuple(df[i][:-1]))
         assert Calculator.get_last_calculation().get_result() == df[i][-1]
 
 def test_subtract_numbers():
