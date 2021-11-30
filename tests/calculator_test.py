@@ -6,7 +6,7 @@ from calculator.calculator import Calculator
 @pytest.fixture(name="clear_history",autouse=True)
 def fixture_clear_history():
     '''clear history function'''
-    Calculator.add_number((1,2))
+    Calculator.add_numbers((1,2))
     yield
     Calculator.clear_history()
 
@@ -43,9 +43,9 @@ def test_get_calculation_object():
     '''test to get object'''
     assert Calculator.get_calculation_object(0).get_result() == 3.0
 
-def test_add_number():
+def test_add_numbers():
     """Testing the Add function of the calculator"""
-    Calculator.add_number((1,2,3,4)) #arrange & act 
+    Calculator.add_numbers((1,2,3,4)) #arrange & act 
     assert Calculator.get_result_of_last_calculation_added_to_history() == 10.0 #assert
 
 def test_subtract_numbers():
