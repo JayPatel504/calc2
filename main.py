@@ -1,15 +1,18 @@
-from file.writeLog import Writing
+'''Python file to continously compute CSV files'''
 import os
+from file.writeLog import Writing
+
 
 def logging(path="input",done='done',loop=True):
+    '''start of watch folder'''
     f_path = os.path.join(os.getcwd(),path)
     print("running")
     while True:
         for file in [f for f in os.listdir(f_path) if f.endswith('.csv')]:
-            fi=os.path.join(f_path,file)
-            print("Processing "+fi)
-            Writing.writeL(fi)
-            os.replace(fi,os.path.join(os.getcwd(),done,file))
+            f_i=os.path.join(f_path,file)
+            print("Processing "+f_i)
+            Writing.writeL(f_i)
+            os.replace(f_i,os.path.join(os.getcwd(),done,file))
         if not loop:
             break
 

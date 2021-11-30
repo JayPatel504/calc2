@@ -1,35 +1,42 @@
+'''Read CSV and performs operation'''
+#pylint: disable=E0401,E1136,E0213,E1135,C0103
 import pandas as pd
 from calculator.calculator import Calculator
 
 class Reading:
-    def read(p):
-        df = pd.read_csv(p).to_numpy()
+    '''Reading Class'''
+    def read(file_path):
+        '''Read CSV and find what operation is needed'''
+        data = pd.read_csv(file_path).to_numpy()
         Calculator.clear_history()
-        if "add" in p:
-            return Reading.df_add(df)
-        elif "sub" in p:
-            return Reading.df_sub(df)
-        elif "multi" in p:
-            return Reading.df_multi(df)
-        elif "div" in p:
-            return Reading.df_div(df)
-    
-    def df_add(df):
-        for i in range(len(df)):
-            Calculator.add_numbers(tuple(df[i]))
+        if "add" in file_path:
+            return Reading.data_add(data)
+        if "sub" in file_path:
+            return Reading.data_sub(data)
+        if "multi" in file_path:
+            return Reading.data_multi(data)
+        return Reading.data_div(data)
+
+    def data_add(data):
+        '''Add rows'''
+        for count,row in enumerate(data):
+            Calculator.add_numbers(tuple(row))
         return "add",Calculator.history
-   
-    def df_sub(df):
-        for i in range(len(df)):
-            Calculator.subtract_numbers(tuple(df[i]))
+
+    def data_sub(data):
+        '''Subtract rows'''
+        for i in range(len(data)):
+            Calculator.subtract_numbers(tuple(data[i]))
         return 'subtract',Calculator.history
-    
-    def df_multi(df):
-        for i in range(len(df)):
-            Calculator.multiply_numbers(tuple(df[i]))
+
+    def data_multi(data):
+        '''Multiply rows'''
+        for i in range(len(data)):
+            Calculator.multiply_numbers(tuple(data[i]))
         return 'multiply',Calculator.history
-    
-    def df_div(df):
-        for i in range(len(df)):
-            Calculator.divide_numbers(tuple(df[i]))
+
+    def data_div(data):
+        '''Divide rows'''
+        for i in range(len(data)):
+            Calculator.divide_numbers(tuple(data[i]))
         return 'divide',Calculator.history
