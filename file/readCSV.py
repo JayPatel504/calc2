@@ -16,20 +16,20 @@ class Reading:
     
     def df_add(df):
         for i in range(len(df)):
-            Calculator.add_numbers(tuple(df[i][:-1])) #have to change bc result column
+            Calculator.add_numbers(tuple(df[i]))
         return "add",Calculator.history
    
     def df_sub(df):
         for i in range(len(df)):
-            Calculator.subtract_numbers(tuple(df[i][:-1])) #have to change bc result column
+            Calculator.subtract_numbers(tuple(df[i]))
         return 'subtract',Calculator.history
     
     def df_multi(df):
         for i in range(len(df)):
-            Calculator.multiply_numbers(tuple(df[i][:-1])) #have to change bc result column
+            Calculator.multiply_numbers(tuple(df[i]))
         return 'multiply',Calculator.history
     
     def df_div(df):
         for i in range(len(df)):
-            Calculator.divide_numbers(tuple(df[i][:-1])) #have to change bc result column
+            Calculator.divide_numbers(tuple(df[i]))
         return 'divide',Calculator.history
