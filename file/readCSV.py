@@ -19,24 +19,24 @@ class Reading:
 
     def data_add(data):
         '''Add rows'''
-        for count,row in enumerate(data):
-            Calculator.add_numbers(tuple(row))
+        for row in enumerate(data):
+            Calculator.add_numbers(tuple(row[1]))
         return "add",Calculator.history
 
     def data_sub(data):
         '''Subtract rows'''
-        for i in range(len(data)):
-            Calculator.subtract_numbers(tuple(data[i]))
+        for row in enumerate(data):
+            Calculator.subtract_numbers(tuple(row[1]))
         return 'subtract',Calculator.history
 
     def data_multi(data):
         '''Multiply rows'''
-        for i in range(len(data)):
-            Calculator.multiply_numbers(tuple(data[i]))
+        for row in enumerate(data):
+            Calculator.multiply_numbers(tuple(row[1]))
         return 'multiply',Calculator.history
 
     def data_div(data):
         '''Divide rows'''
-        for i in range(len(data)):
-            Calculator.divide_numbers(tuple(data[i]))
+        for row in enumerate(data):
+            Calculator.divide_numbers(tuple(row[1]))
         return 'divide',Calculator.history

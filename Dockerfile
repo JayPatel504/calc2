@@ -1,4 +1,4 @@
-FROM python:3.9-alpine
+FROM python:3.8-buster
 RUN /usr/local/bin/python -m pip install --upgrade pip
 RUN adduser -D myuser
 RUN apk add --no-cache gcc musl-dev linux-headers

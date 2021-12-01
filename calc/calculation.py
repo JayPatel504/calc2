@@ -12,4 +12,4 @@ class Calculation:
     @staticmethod
     def convert_args_to_list_float(values):
         """function to standardize values to list of floats"""
-        return tuple(map(float,values)) 
+        return tuple(map(float,values))
