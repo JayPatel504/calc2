@@ -30,7 +30,7 @@ result
 1.77
 0.84
 0.37
-#DIV/0!
+"Can't divide by zero"
 0.71
 0.83
 1.76
@@ -192,7 +192,7 @@ result
 0.22
 0.14
 0.40
-#DIV/0!
+"Can't divide by zero"
 0.00
 1.49
 1.05
@@ -325,7 +325,7 @@ result
 0.44
 0.60
 0.87
-#DIV/0!
+"Can't divide by zero"
 0.06
 1.04
 0.19
@@ -623,7 +623,7 @@ result
 0.04
 1.68
 1.02
-#DIV/0!
+"Can't divide by zero"
 0.25
 0.25
 1.05
@@ -637,7 +637,7 @@ result
 1.31
 0.24
 19.50
-#DIV/0!
+"Can't divide by zero"
 1.88
 0.01
 0.12
@@ -750,7 +750,7 @@ result
 3.87
 0.07
 3.06
-#DIV/0!
+"Can't divide by zero"
 3.48
 0.04
 8.17
@@ -778,7 +778,7 @@ result
 2.41
 1.24
 0.05
-#DIV/0!
+"Can't divide by zero"
 12.57
 1.18
 1.34
@@ -803,7 +803,7 @@ result
 4.67
 30.00
 1.00
-#DIV/0!
+"Can't divide by zero"
 0.00
 0.84
 0.61
@@ -817,7 +817,7 @@ result
 1.59
 0.74
 0.40
-#DIV/0!
+"Can't divide by zero"
 0.45
 1.05
 0.35
@@ -941,7 +941,7 @@ result
 2.26
 0.41
 2.50
-#DIV/0!
+"Can't divide by zero"
 3.59
 1.00
 1.75
